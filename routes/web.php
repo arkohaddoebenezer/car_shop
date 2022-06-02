@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/details', function () {
+    return view('single');
+})->name('details');
 
 Route::middleware([
     'auth:sanctum',
@@ -23,6 +27,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('welcome');
     })->name('dashboard');
 });
