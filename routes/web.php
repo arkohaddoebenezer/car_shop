@@ -17,9 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/chat', function () {
+    return view('chat');
+})->name('chat');
+
 Route::get('/details', function () {
     return view('single');
 })->name('details');
+
 
 Route::middleware([
     'auth:sanctum',

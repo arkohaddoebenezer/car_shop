@@ -15,3 +15,7 @@
  </script>
  <script src="plugins/google-map/gmap.js"></script>
  <script src="js/script.js"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+<script src="plugins/google-map/gmap.js"></script>
+<script src="js/script.js"></script>
