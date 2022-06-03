@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light navigation">
-                    <a class="navbar-brand" href="index.html">
-                        <img class="logo" src="media/car_logo.png" alt="">
+                    <a class="navbar-brand" href="{{route('home')}}">
+                        <img class="logo" src="{{asset('media/car_logo.png')}}" alt="">
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
