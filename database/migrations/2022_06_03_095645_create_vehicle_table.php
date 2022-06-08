@@ -13,7 +13,7 @@ class CreateVehicleTable extends Migration
      */
     public function up()
     {
-        Schema::create('vehicle', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('model');
@@ -32,7 +32,7 @@ class CreateVehicleTable extends Migration
             $table->string('interior_view5');
             $table->timestamps();
         });
-        Schema::table('vehicle', function (Blueprint $table) {
+        Schema::table('vehicles', function (Blueprint $table) {
             $table->softDeletes();
         });
     }
@@ -44,6 +44,6 @@ class CreateVehicleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle');
+        Schema::dropIfExists('vehicles');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VehicleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/upload', [VehicleController::class,'create']
+)->name('create_photo');
+Route::post('/upload', [VehicleController::class,'store']
+)->name('store_photo');
 
 Route::get('/chat', function () {
     return view('chat');

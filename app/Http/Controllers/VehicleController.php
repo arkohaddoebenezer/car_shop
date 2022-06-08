@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Vehicle;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class VehicleController extends Controller
 {
@@ -23,7 +25,7 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        //
+        return view('photo_upload');
     }
 
     /**
@@ -33,8 +35,34 @@ class VehicleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   $photo = $request->file("photo")->store("images");
+        $vehicle = new Vehicle();
+        $vehicle->front_view= $photo;
+        $vehicle->model=$request->model;
+        $vehicle->transmission = $request->transmission;
+        $vehicle->type = $request->type;
+        try{
+            $vehicle->save();
+            return dd($vehicle);
+        }
+        catch(Exception $e) {
+            return dd ($e);
+        }
+        
+
+        // 'fuelType',
+        // 'no_of_passengers',
+        // 'front_view',
+        // 'back_view',
+        // 'left_side_view',
+        // 'right_side_view',
+        // 'interior_view1',
+        // 'interior_view2',
+        // 'interior_view3',
+        // 'interior_view4',
+        // 'interior_view5',
+        // $photo->save();
+        return redirect()->back();
     }
 
     /**
